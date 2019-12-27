@@ -25,6 +25,9 @@
     "@nestjs/platform-express": "^6.7.2",
     "@nestjs/platform-socket.io": "^6.10.12",
     "@nestjs/websockets": "^6.10.12",
+    "aws-lambda": "^1.0.3",
+    "aws-serverless-express": "^3.3.6",
+    "express": "^4.17.1",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.0",
     "rxjs": "^6.5.3"

@@ -3,7 +3,8 @@ import {
   WebSocketGateway,
   WebSocketServer,
   WsResponse,
-  MessageBody
+  MessageBody,
+  ConnectedSocket
 } from '@nestjs/websockets';
 import { from, Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -17,9 +18,15 @@ export class EventsGateway {
   @SubscribeMessage('message')
   // handleMessage(client: any, payload: any): WsResponse<string> {
   handleMessage(@MessageBody() data: any): WsResponse<string> {
+  // handleMessage(@ConnectedSocket() client, @MessageBody() data: any): void {
     console.log('message start');
-    // return { event: 'message', data: 'Hello World' };
-    return { event: 'message', data: data };
+    // this.server.emit('response', 'response')
+    return { event: 'response', data: data };
+  }
+
+  @SubscribeMessage('broadcast')
+  broadcast(@MessageBody() data: any): void {
+    this.server.emit('broadcast', 'response')
   }
 
   /*
