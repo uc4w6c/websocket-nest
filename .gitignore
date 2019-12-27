@@ -1,0 +1,18 @@
+# compiled output
+websocket-client/dist
+websocket-client/tmp
+websocket-client/out-tsc
+websocket-server/dist
+websocket-server/tmp
+websocket-server/out-tsc
+
+# dependencies
+websocket-client/node_modules
+websocket-server/node_modules
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
