@@ -10,7 +10,7 @@ import { from, Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Server } from 'socket.io';
 
-@WebSocketGateway(3001)
+@WebSocketGateway()
 export class EventsGateway {
   @WebSocketServer()
   server: Server;
@@ -25,8 +25,10 @@ export class EventsGateway {
   }
 
   @SubscribeMessage('broadcast')
-  broadcast(@MessageBody() data: any): void {
-    this.server.emit('broadcast', 'response')
+  broadcast(@MessageBody() data: any): any {
+    console.log('broadcast start');
+    // this.server.emit('broadcast', 'response')
+    return { statusCode: 200, body: 'websocket test'};
   }
 
   /*
