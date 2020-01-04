@@ -10,6 +10,8 @@ https://github.com/serverless/serverless-websockets-plugin
 怪しいissue。でも試したけどダメだった。
 https://github.com/nestjs/nest/issues/2355
 
+ここ参考になりそうなライブラリ
+https://github.com/fastify/aws-lambda-fastify
 
 
 
